@@ -21,7 +21,12 @@
 		</div>
 
 		<footer>
-			<div>Copyright IOSync @ 2024</div>
+			<div class="container">
+				<div class="col-md-12">
+					<hr />
+				</div>
+				<div class="p-3 text-center">Copyright IOSync @ 2024</div>
+			</div>
 		</footer>
 	</div>
 </template>

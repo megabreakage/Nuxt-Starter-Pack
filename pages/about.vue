@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div class="container p-3 text-center">
 		<h2>About Nuxt3</h2>
 	</div>
 </template>
