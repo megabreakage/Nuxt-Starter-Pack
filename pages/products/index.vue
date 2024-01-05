@@ -1,20 +1,13 @@
 <template>
-    <div>
-        <h2>List of all products</h2>
-        <p>
-            <ul>
-                <li> <NuxtLink to="products/coffee-table"> Product 1</NuxtLink> </li>
-                <br />
-                <li> <NuxtLink to="products/google-pixel-6a"> Product 2</NuxtLink> </li>
-                <br />
-                <li> <NuxtLink to="products/iphone-15-pro-max"> Product 3</NuxtLink> </li>
-                <br />
-                <li> <NuxtLink :to="products/sony-bravia"> Product 4</NuxtLink> </li>
-            </ul>
-        </p>
-    </div>
+	<div>
+		<div class="grid grid-cols-4 gap-5">
+			<div class v-for="product in products" :key="product.id">
+				<NuxtLink :to="`/products/${product.id}`">{{ product.title }}</NuxtLink>
+			</div>
+		</div>
+	</div>
 </template>
 
 <script setup>
-const { slug } = useRoute().params;
+	const { data: products } = await useFetch("https://fakestoreapi.com/products");
 </script>
