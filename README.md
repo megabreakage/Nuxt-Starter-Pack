@@ -155,7 +155,13 @@ Nuxt lets you write Vue components in a way that makes sense. Every repetitive t
    dev@breakage:~$ npx tailwindcss init
    ```
 
-4.
+4. For a custome TailwindCSS create a file in `assets/css` call it `tailwind.css`; make sure to add the @tailwind directives for each of Tailwind’s layer types (base, components, and utilities) as below:
+
+   ```css
+   @tailwind base;
+   @tailwind components;
+   @tailwind utilities;
+   ```
 
 ---
 
