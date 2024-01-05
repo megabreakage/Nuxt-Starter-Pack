@@ -28,6 +28,7 @@ Table of Contents
     - [Adding Layouts](#adding-layouts)
     - [Creating Links](#creating-links)
       - [Creating Error Pages](#creating-error-pages)
+      - [Adding Meta-data \& useHead](#adding-meta-data--usehead)
     - [Reference Tutorials](#reference-tutorials)
 
 ---
@@ -257,6 +258,80 @@ Nuxt lets you write Vue components in a way that makes sense. Every repetitive t
       }
    </script>
    ```
+
+---
+
+#### Adding Meta-data & useHead
+
+1. To add meta-data & external libraries globally add the data in nuxt.config.js.
+   e.g
+
+   ```ts
+   export default defineNuxtConfig({
+     devtools: { enabled: true },
+     modules: ["@nuxtjs/tailwindcss"],
+     app: {
+       head: {
+         title: "Nuxt Starter Pack",
+         meta: [
+           {
+             name: "description",
+             content:
+               "A is a Beginner'n s Guide to the initial installation and basic setup of a Nuxt App project",
+           },
+           {
+             name: "keywords",
+             content: "nuxt, starter, beginner, guide, tutorial",
+           },
+           { name: "author", content: "IOSync Limited" },
+         ],
+         link: [
+           {
+             rel: "stylesheet",
+             href: "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/fontawesome.min.css",
+           },
+         ],
+       },
+     },
+   });
+   ```
+
+2. To make dynamic meta-data per page apply using the `useHead()` composable as follows:
+
+   ```js
+   <script setup>
+      useHead({
+         title: 'Nuxt App | Home',
+         meta: [
+            {
+             name: "description",
+             content:
+               "Welcome to our Next Starter Pack | A is a Beginner'n s Guide to the initial installation and basic setup of a Nuxt App project",
+            },
+            {
+             name: "keywords",
+             content:
+               "welcome, installation, nuxt, starter, beginner, guide, tutorial, app, basic, setup",
+           },
+         ]
+      })
+   </script>
+   ```
+
+3. Alternatively, you can override the defaults in `nuxt.config.ts` by using `<Head></Head>` components in template as below:
+
+   ```js
+   <template>
+      <div>
+         <Head>
+            <Title> Nuxt3 | Start Pack</Title>
+            <Meta name="description" :content="product.description"
+         </Head>
+      </div>
+   </template>
+   ```
+
+---
 
 ### Reference Tutorials
 

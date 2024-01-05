@@ -25,4 +25,19 @@
 			fatal: true, // makes sure server is requested to createError even from a browser click
 		});
 	}
+
+	useHead({
+		title: product.value.title,
+		meta: [
+			{
+				name: "description",
+				content: product.value.description,
+			},
+			{
+				name: "keywords",
+				content:
+					"welcome, installation nuxt, starter, beginner, guide, tutorial, app, basic, setup",
+			},
+		],
+	});
 </script>
