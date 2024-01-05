@@ -12,6 +12,9 @@
 					<li>
 						<NuxtLink :to="{ name: 'products' }" class="btn">Products</NuxtLink>
 					</li>
+					<li>
+						<NuxtLink to="/products/abc">Products abc</NuxtLink>
+					</li>
 				</ul>
 			</nav>
 		</header>
@@ -25,7 +28,7 @@
 				<div>
 					<hr />
 				</div>
-				<div class="p-4 text-center">Copyright IOSync @ 2024</div>
+				<div class="p-4 text-center">Copyright IOSync &copy;2024</div>
 			</div>
 		</footer>
 	</div>

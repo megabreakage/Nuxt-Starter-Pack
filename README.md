@@ -27,6 +27,7 @@ Table of Contents
     - [Adding Pages and Routes](#adding-pages-and-routes)
     - [Adding Layouts](#adding-layouts)
     - [Creating Links](#creating-links)
+      - [Creating Error Pages](#creating-error-pages)
     - [Reference Tutorials](#reference-tutorials)
 
 ---
@@ -220,6 +221,42 @@ Nuxt lets you write Vue components in a way that makes sense. Every repetitive t
    ```
 
 ---
+
+#### Creating Error Pages
+
+1. Create `error.vue` file in the root of the project.
+2. Define the `error` prop as below to make the data available in template:
+
+   ```vue
+   <template>
+     <div>
+       <h1>{{ error.statusCode }}</h1>
+       <h4>Oops!</h4>
+       <p>{{ error.message }}</p>
+     </div>
+   </template>
+
+   <script setup>
+   defineProps(["error"]);
+   </script>
+   ```
+
+   - In case a product is not found, create a checker on the product details page and throw `createError()` as below:
+
+   ```js
+   <script setup>
+      const { id } = useRoute().params;
+
+      const { data: product } = await useFetch(
+         "https://fakestoreapi.com/products/" + id,
+         { key: id }
+      );
+
+      if(!product.value){
+         throw createError({ statusCode: 404, statusMessage: 'Product not found'});
+      }
+   </script>
+   ```
 
 ### Reference Tutorials
 

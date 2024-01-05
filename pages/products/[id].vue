@@ -15,7 +15,14 @@
 	const { id } = useRoute().params;
 
 	const { data: product } = await useFetch(
-		"https://fakestoreapi.com/products/" + id,
-		{ key: id }
+		"https://fakestoreapi.com/products/" + id
 	);
+
+	if (!product.value) {
+		throw createError({
+			statusCode: 404,
+			statusMessage: "Product not found",
+			fatal: true, // makes sure server is requested to createError even from a browser click
+		});
+	}
 </script>
