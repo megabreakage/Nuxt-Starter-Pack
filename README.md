@@ -1,18 +1,16 @@
 ---
-App: NuxtApp
+App: Nuxt3 Starter Pack
 Description: Starter Pack
 Author: Martin Njuguna
 Date: 04 January 2024
-Latest Revision: 05 January 2024
+Latest Revision: 07 January 2024
 ---
 
-# NUXT3: The IntuitiveVue Framework - Starter Pack
-
----
+# NUXT3: The IntuitiveVue Framework
 
 Table of Contents
 
-- [NUXT3: The IntuitiveVue Framework - Starter Pack](#nuxt3-the-intuitivevue-framework---starter-pack)
+- [NUXT3: The IntuitiveVue Framework](#nuxt3-the-intuitivevue-framework)
   - [Introduction](#introduction)
     - [About](#about)
     - [What is Nuxt?](#what-is-nuxt)
@@ -27,9 +25,11 @@ Table of Contents
     - [Adding Pages and Routes](#adding-pages-and-routes)
     - [Adding Layouts](#adding-layouts)
     - [Creating Links](#creating-links)
-      - [Creating Error Pages](#creating-error-pages)
-      - [Adding Meta-data \& useHead](#adding-meta-data--usehead)
-    - [Reference Tutorials](#reference-tutorials)
+    - [Creating Error Pages](#creating-error-pages)
+    - [Adding Meta-data \& useHead](#adding-meta-data--usehead)
+    - [Server routes](#server-routes)
+    - [Dynamic Server Routes](#dynamic-server-routes)
+  - [Reference Tutorials](#reference-tutorials)
 
 ---
 
@@ -223,7 +223,7 @@ Nuxt lets you write Vue components in a way that makes sense. Every repetitive t
 
 ---
 
-#### Creating Error Pages
+### Creating Error Pages
 
 1. Create `error.vue` file in the root of the project.
 2. Define the `error` prop as below to make the data available in template:
@@ -261,7 +261,7 @@ Nuxt lets you write Vue components in a way that makes sense. Every repetitive t
 
 ---
 
-#### Adding Meta-data & useHead
+### Adding Meta-data & useHead
 
 1. To add meta-data & external libraries globally add the data in nuxt.config.js.
    e.g
@@ -333,9 +333,17 @@ Nuxt lets you write Vue components in a way that makes sense. Every repetitive t
 
 ---
 
-### Reference Tutorials
+### Server routes
 
-1. [Nuxt3](https://youtu.be/dvanqBUoxhc?si=7fgu-BG12Z6nt-W1)
+1. Server routes
+
+### Dynamic Server Routes
+
+1. Dynamic server routes
+
+## Reference Tutorials
+
+1. [Nuxt3 ](https://youtu.be/dvanqBUoxhc?si=7fgu-BG12Z6nt-W1)
 2. [Tailwind CSS](https://www.youtube.com/watch?v=bxmDnn7lrnk&list=PL4cUxeGkcC9gpXORlEHjc5bgnIi5HEGhw&index=2)
 3. [VueJs](https://www.youtube.com/watch?v=YrxBCBibVo0&list=PL4cUxeGkcC9hYYGbV60Vq3IXYNfDk8At1&index=2)
 
